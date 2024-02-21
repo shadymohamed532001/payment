@@ -14,6 +14,7 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
   String? cardHolderName = '';
   String? cvvCode = '';
   bool? showBackView = false;
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +26,26 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
           cardHolderName: cardHolderName!,
           cvvCode: cvvCode!,
           showBackView: showBackView!,
+          isHolderNameVisible: true,
           onCreditCardWidgetChange: (value) {
             //true when you want to show cvv(back) view
           },
         ),
+        CreditCardForm(
+          cardNumber: cardNumber!,
+          expiryDate: expiryDate!,
+          cardHolderName: cardHolderName!,
+          cvvCode: cvvCode!,
+          onCreditCardModelChange: (creadcardmodel) {
+            cardNumber = creadcardmodel.cardNumber;
+            expiryDate = creadcardmodel.expiryDate;
+            cardHolderName = creadcardmodel.cardHolderName;
+            cvvCode = creadcardmodel.cvvCode;
+            showBackView = creadcardmodel.isCvvFocused;
+            setState(() {});
+          },
+          formKey: formKey,
+        )
       ],
     );
   }

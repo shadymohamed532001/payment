@@ -7,11 +7,13 @@ class PayMentDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        PayMentMethodListView(),
-        CustomCreditCard(),
-      ],
+    return SingleChildScrollView(
+      child: const Column(
+        children: [
+          PayMentMethodListView(),
+          CustomCreditCard(),
+        ],
+      ),
     );
   }
 }
