@@ -1,26 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 
-class CustomCreaditeCard extends StatefulWidget {
-  const CustomCreaditeCard({super.key});
+class CustomCreditCard extends StatefulWidget {
+  const CustomCreditCard({Key? key}) : super(key: key);
 
   @override
-  State<CustomCreaditeCard> createState() => _CustomCreaditeCardState();
+  State<CustomCreditCard> createState() => _CustomCreditCardState();
 }
 
-class _CustomCreaditeCardState extends State<CustomCreaditeCard> {
+class _CustomCreditCardState extends State<CustomCreditCard> {
+  String? cardNumber = '';
+  String? expiryDate = '';
+  String? cardHolderName = '';
+  String? cvvCode = '';
+  bool? showBackView = false;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         CreditCardWidget(
-          cardNumber: '',
-          expiryDate: '',
-          cardHolderName: '',
-          cvvCode: '',
-          showBackView: true,
-          onCreditCardWidgetChange:
-              (value) {}, //true when you want to show cvv(back) view
+          cardNumber: cardNumber!,
+          expiryDate: expiryDate!,
+          cardHolderName: cardHolderName!,
+          cvvCode: cvvCode!,
+          showBackView: showBackView!,
+          onCreditCardWidgetChange: (value) {
+            //true when you want to show cvv(back) view
+          },
         ),
       ],
     );

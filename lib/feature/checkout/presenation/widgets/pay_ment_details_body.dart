@@ -10,7 +10,7 @@ class PayMentDetailsBody extends StatelessWidget {
     return const Column(
       children: [
         PayMentMethodListView(),
-        CustomCreaditeCard(),
+        CustomCreditCard(),
       ],
     );
   }
