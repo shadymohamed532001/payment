@@ -15,9 +15,10 @@ class MyCardViewBody extends StatelessWidget {
           const SizedBox(
             height: 18,
           ),
-          Image.asset(
-            'assets/images/Group 6.png',
-            height: 450,
+          Expanded(
+            child: Image.asset(
+              'assets/images/Group 6.png',
+            ),
           ),
           const SizedBox(
             height: 25,
@@ -49,7 +50,7 @@ class MyCardViewBody extends StatelessWidget {
             title: 'Total',
             value: '\$50.97',
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           CustomBottom(
@@ -57,8 +58,8 @@ class MyCardViewBody extends StatelessWidget {
             backgroundColor: const Color(0xff34A853),
             onPressed: () {},
           ),
-          SizedBox(
-            height: 10,
+          const SizedBox(
+            height: 50,
           ),
         ],
       ),
