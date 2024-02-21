@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payment/core/widgets/app_bottom.dart';
+import 'package:payment/feature/checkout/presenation/views/pay_ment_details.dart';
 import 'package:payment/feature/checkout/presenation/widgets/card_Info_item.dart';
 import 'package:payment/feature/checkout/presenation/widgets/total_price_info.dart';
 
@@ -56,7 +57,11 @@ class MyCardViewBody extends StatelessWidget {
           CustomBottom(
             bottomtext: 'Complete Payment',
             backgroundColor: const Color(0xff34A853),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const PayMentDetails();
+              }));
+            },
           ),
           const SizedBox(
             height: 50,
