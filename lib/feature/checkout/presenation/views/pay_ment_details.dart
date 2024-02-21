@@ -11,10 +11,15 @@ class PayMentDetails extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        leading: const Icon(
-          Icons.arrow_back,
-          color: Colors.black,
-          size: 28,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+            size: 28,
+          ),
         ),
         title: const Text(
           'Payment Details',
@@ -24,7 +29,7 @@ class PayMentDetails extends StatelessWidget {
           ),
         ),
       ),
-      body: PayMentDetailsBody(),
+      body: const PayMentDetailsBody(),
     );
   }
 }

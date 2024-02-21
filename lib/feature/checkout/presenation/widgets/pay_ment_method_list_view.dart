@@ -10,7 +10,7 @@ class PayMentMethodListView extends StatefulWidget {
 
 class _PayMentMethodListViewState extends State<PayMentMethodListView> {
   final List<String> payMentMethodsItems = const [
-    'assets/images/Group.png',
+    'assets/images/card.png',
     'assets/images/paypal.png'
   ];
 

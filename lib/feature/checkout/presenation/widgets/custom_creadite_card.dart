@@ -21,10 +21,22 @@ class _CustomCreditCardState extends State<CustomCreditCard> {
     return Column(
       children: [
         CreditCardWidget(
+          cardBgColor: Colors.black,
+          bankName: 'CIB',
           cardNumber: cardNumber!,
           expiryDate: expiryDate!,
           cardHolderName: cardHolderName!,
           cvvCode: cvvCode!,
+          customCardTypeIcons: <CustomCardTypeIcon>[
+            CustomCardTypeIcon(
+              cardType: CardType.mastercard,
+              cardImage: Image.asset(
+                'assets/images/mastercard.png',
+                height: 48,
+                width: 48,
+              ),
+            ),
+          ],
           showBackView: showBackView!,
           isHolderNameVisible: true,
           onCreditCardWidgetChange: (value) {
