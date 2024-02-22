@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:payment/core/widgets/app_bottom.dart';
 import 'package:payment/feature/checkout/presenation/widgets/master_card_Info_widget.dart';
 import 'package:payment/feature/checkout/presenation/widgets/thank_you_item.dart';
@@ -74,11 +73,11 @@ class ThankYouCard extends StatelessWidget {
               value: '\$ 500.3 ',
             ),
             const SizedBox(
-              height: 30,
+              height: 40,
             ),
             const MasterCardInfoWidget(),
             const Spacer(
-              flex: 10,
+              flex: 3,
             ),
             Row(
               children: [
