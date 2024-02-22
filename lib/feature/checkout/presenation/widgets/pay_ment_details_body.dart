@@ -35,6 +35,7 @@ class _PayMentDetailsBodyState extends State<PayMentDetailsBody> {
             child: Padding(
               padding: const EdgeInsets.only(left: 16, right: 16, bottom: 32),
               child: CustomBottom(
+                bottomHeight: 60,
                 bottomtext: 'Credit Card',
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
