@@ -30,7 +30,7 @@ class CustomBottom extends StatelessWidget {
             vertical: 10,
           ),
           backgroundColor: backgroundColor,
-          shape: StadiumBorder(
+          shape: const StadiumBorder(
             side: BorderSide(
               color: Color(0xff34A853),
             ),
@@ -39,7 +39,7 @@ class CustomBottom extends StatelessWidget {
         child: Text(
           bottomtext,
           style: textBottomStyle ??
-              TextStyle(
+              const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w500,
                   color: Colors.black),
