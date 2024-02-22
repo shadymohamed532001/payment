@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:payment/core/widgets/app_bottom.dart';
+import 'package:payment/feature/checkout/presenation/views/thank_you_view.dart';
 import 'package:payment/feature/checkout/presenation/widgets/custom_creadite_card.dart';
 import 'package:payment/feature/checkout/presenation/widgets/pay_ment_method_list_view.dart';
 
@@ -42,6 +43,10 @@ class _PayMentDetailsBodyState extends State<PayMentDetailsBody> {
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                     setState(() {});
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const ThankYouView();
+                    }));
                   }
                 },
                 backgroundColor: Colors.green,
