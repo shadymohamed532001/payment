@@ -9,6 +9,7 @@ class CustomBottom extends StatelessWidget {
     this.bottomWidth,
     this.bottomHeight,
     this.textBottomStyle,
+    this.isLoading = false,
   });
 
   final void Function() onPressed;
@@ -17,6 +18,8 @@ class CustomBottom extends StatelessWidget {
   final double? bottomWidth;
   final double? bottomHeight;
   final TextStyle? textBottomStyle;
+
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -36,14 +39,16 @@ class CustomBottom extends StatelessWidget {
             ),
           ),
         ),
-        child: Text(
-          bottomtext,
-          style: textBottomStyle ??
-              const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black),
-        ),
+        child: isLoading
+            ? const Center(child: CircularProgressIndicator())
+            : Text(
+                bottomtext,
+                style: textBottomStyle ??
+                    const TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black),
+              ),
       ),
     );
   }

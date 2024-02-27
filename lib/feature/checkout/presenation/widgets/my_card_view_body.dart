@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:payment/core/widgets/app_bottom.dart';
+import 'package:payment/feature/checkout/data/repo/checkout_repo_impl.dart';
+import 'package:payment/feature/checkout/logic/cubit/check_out_cubit.dart';
 import 'package:payment/feature/checkout/presenation/widgets/card_Info_item.dart';
-import 'package:payment/feature/checkout/presenation/widgets/pay_ment_method_list_view.dart';
+import 'package:payment/feature/checkout/presenation/widgets/payment_method_bottom_sheet.dart';
 import 'package:payment/feature/checkout/presenation/widgets/total_price_info.dart';
 
 class MyCardViewBody extends StatelessWidget {
@@ -66,40 +69,18 @@ class MyCardViewBody extends StatelessWidget {
                           topRight: Radius.circular(32))),
                   context: context,
                   builder: (context) {
-                    return const PayMentMethodBottomSheet();
+                    return BlocProvider(
+                      create: (context) => CheckOutCubit(
+                        CheckOutRepoImpl(),
+                      ),
+                      child: const PayMentMethodBottomSheet(),
+                    );
                   });
             },
           ),
           const SizedBox(
             height: 50,
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class PayMentMethodBottomSheet extends StatelessWidget {
-  const PayMentMethodBottomSheet({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 35),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 50, bottom: 20),
-            child: PayMentMethodListView(),
-          ),
-          CustomBottom(
-            backgroundColor: Colors.green,
-            onPressed: () {},
-            bottomtext: 'pay',
-          )
         ],
       ),
     );
