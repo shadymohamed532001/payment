@@ -45,6 +45,7 @@ class CustomBottomSheetConsummer extends StatelessWidget {
         }
         if (state is CheckOutError) {
           print(state.error.toString());
+          Navigator.pop(context);
           // Handle the error, such as displaying an error message
         }
       },
@@ -53,8 +54,13 @@ class CustomBottomSheetConsummer extends StatelessWidget {
           isLoading: state is CheckOutLoading ? true : false,
           backgroundColor: Colors.green,
           onPressed: () {
+            // git all this form the appp
             PaymentIntentInputModel paymentIntentInput =
-                PaymentIntentInputModel(amount: '100', currency: 'USD');
+                PaymentIntentInputModel(
+              customerId: 'cus_Pdbvxp1eBo1KYs',
+              amount: '100',
+              currency: 'USD',
+            );
             BlocProvider.of<CheckOutCubit>(context)
                 .makepayment(paymentIntentInput);
           },

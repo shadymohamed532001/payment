@@ -7,7 +7,6 @@ import 'package:payment/feature/checkout/presenation/views/my_card_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
   Stripe.publishableKey = ApiKeys.stripePublishableKey;
   Bloc.observer = MyBlocObserver();
 
