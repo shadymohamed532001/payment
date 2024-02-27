@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_paypal_checkout/flutter_paypal_checkout.dart';
 
 class CheckoutPage extends StatefulWidget {
   const CheckoutPage({super.key});
@@ -20,7 +19,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
       ),
       body: Center(
         child: TextButton(
-          onPressed: () async {},
+          onPressed: () async {
+
+          },
           style: TextButton.styleFrom(
             backgroundColor: Colors.teal,
             foregroundColor: Colors.white,

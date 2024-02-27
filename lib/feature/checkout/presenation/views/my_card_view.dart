@@ -85,7 +85,7 @@ class MyCardView extends StatelessWidget {
               ),
             );
           },
-          child: Icon(
+          child: const Icon(
             Icons.arrow_back,
             color: Colors.black,
             size: 28,
